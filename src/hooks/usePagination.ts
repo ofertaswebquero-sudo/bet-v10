@@ -7,7 +7,6 @@ export function usePagination<T>(data: T[], initialPageSize: number = 20) {
   const totalRecords = data.length;
   const totalPages = Math.max(1, Math.ceil(totalRecords / pageSize));
 
-  // Reset to page 1 if data changes or page size changes
   useMemo(() => {
     if (currentPage > totalPages) {
       setCurrentPage(1);

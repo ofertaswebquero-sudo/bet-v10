@@ -7,3 +7,4 @@ import { initGlobalLogging } from "./hooks/useLogs";
 initGlobalLogging();
 
 createRoot(document.getElementById("root")!).render(<App />);
+

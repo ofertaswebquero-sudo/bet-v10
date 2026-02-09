@@ -42,7 +42,6 @@ export function useCassinoMutations() {
 
   const update = useMutation({
     mutationFn: async ({ id, ...item }: Partial<Cassino> & { id: string }) => {
-      // Remove campos gerados pelo banco de dados para evitar erro de atualização
       const { tipo, valor_resultado, created_at, updated_at, ...updateData } = item as any;
       const { data, error } = await supabase.from('cassino').update(updateData).eq('id', id).select().single();
       if (error) throw error;
